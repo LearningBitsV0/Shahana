@@ -36,20 +36,119 @@
     /* align-items: center; */
     gap: 5rem; /* Space between cards */
 }
-.card {
-    width: 15rem; /* Adjust as needed */
-    height: 15rem;
+/* .card {
+    
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    padding: 20px;
+    
     text-align: center;
-    transition: transform 0.2s ease;
-    display: flex; /* Smooth hover effect */
+    
+    display: flex; 
     justify-content: center;
     align-content: center;
     flex-direction: column;
-}
+} */
+@import url('https://fonts.googleapis.com/css?family=Lora:700');
+.card {
+    padding: 20px;
+    position: relative;
+    width: 15rem; /* Adjust as needed */
+    height: 15rem;
+    background: white;
+    border-radius: 8px; /* Curved edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  /* Bottom-Right Borders */
+  .card::before,
+  .card::after {
+    content: "";
+    position: absolute;
+    background: rgb(57, 57, 205);
+    transition: 0.3s linear;
+  }
+  
+  /* Bottom border (moves left) */
+  .card::before {
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 3px;
+    border-bottom-right-radius: 15px; /* Curved joint */
+    transition: width 0.3s linear;
+  }
+  
+  /* Right border (moves up) */
+  .card::after {
+    bottom: 0;
+    right: 0;
+    width: 3px;
+    height: 0;
+    border-bottom-right-radius: 15px; /* Curved joint */
+    transition: height 0.3s linear 0.3s;
+  }
+  
+  /* Hover Effect */
+  .card:hover::before {
+    width: 100%;
+  }
+  
+  .card:hover::after {
+    height: 100%;
+  }
+  
+  /* Top-Left Borders */
+  .card span::before,
+  .card span::after {
+    content: "";
+    position: absolute;
+    background: rgb(52, 52, 213);
+    transition: 0.3s linear;
+  }
+  
+  /* Top border (moves right) */
+  .card span::before {
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    border-top-left-radius: 15px; /* Curved joint */
+    transition: width 0.3s linear 0.6s;
+  }
+  
+  /* Left border (moves down) */
+  .card span::after {
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 0;
+    border-top-left-radius: 15px; /* Curved joint */
+    transition: height 0.3s linear 0.9s;
+  }
+  
+  .card:hover span::before {
+    width: 100%;
+  }
+  
+  .card:hover span::after {
+    height: 100%;
+  }
+  
+  /* Text Styling */
+  .card h1 {
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  /* transition effect */
 
 .card img {
     width: 80px; /* Adjust image size */
@@ -76,9 +175,7 @@
 
 
 
-.card:hover {
-    transform: translateY(-5px); /* Move up slightly on hover */
-}
+
 .main-container3 {
     background-color: #0056b3;
     padding-top: 3rem;

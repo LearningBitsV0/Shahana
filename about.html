@@ -37,7 +37,10 @@
             </div>
           </div>
           <div class="container-img1">
-            <img src="icones/about/Limitless Service Web Artwork 2.png" alt="" />
+            <img
+              src="icones/about/Limitless Service Web Artwork 2.png"
+              alt=""
+            />
           </div>
         </div>
         <!-- seconde container -->
@@ -115,15 +118,87 @@
         <!-- fifth container -->
         <div class="main-container5">
           <div class="sub-container5">
-            <div><h2>Our</h2></div>
-            <div><h1>History</h1></div>
-            <div>
-              <p>
-                Limitless Solutions is one of the Leading Service Companies
-                based in the UAE that was created by pairing the passion for
-                Business, Events, Education, It Solutions, and more.
-              </p>
+            <div class="sub-div-container5">
+              <div><h2>Our</h2></div>
+              <div><h1>History</h1></div>
+               <div>
+                <p>
+                  Limitless Solutions is one of the Leading Service Companies
+                  based in the UAE that was created by pairing the passion for
+                  Business, Events, Education, It Solutions, and more.
+                </p>
+              </div>
             </div>
+            <div class="main-timeline">
+            <div class="timeline-container">
+              <!-- <div class="timeline"> -->
+                <div class="event" style="position:absolute;top:-30px;left:0px;display:flex;gap:1px;flex-direction:column;" id="event-2012">
+                    <p class="year">2012</p>
+                    <div
+                      class="circle"
+                      
+                    > <div class="insidecircle" 
+                    ><div class="subinsidecircle"></div></div></div>
+                  <div class="iconarrow">
+                    <img src="icones/about/bottomarrow.png" alt="" />
+                  </div>
+                  <p class="desc">The journey began in Fujairah</p>
+                </div>
+          
+                <div class="event" style="display:flex;flex-direction:column-reverse ;position:absolute;top:-103px;left:10rem;" id="event-2017">
+                    <p class="year">2017</p>
+                    <div class="circle">
+                      <div class="insidecircle" 
+                      ><div class="subinsidecircle"></div></div>
+                    </div>
+                    <div class="iconarrow">
+                      <img src="icones/about/toparrow.png" alt="" />
+                    </div>
+                  <p class="desc">The opening of the Sharjah branch</p>
+                </div>
+          
+                <div class="event" id="event-2019" style="position:absolute;top:-30px;left:20rem;display:flex;gap:1px;flex-direction:column;">
+                    <p class="year">2019</p>
+                    <div class="circle">
+                      <div class="insidecircle" 
+                      ><div class="subinsidecircle"></div></div>
+                    </div>
+                    <div class="iconarrow">
+                      <img src="icones/about/bottomarrow.png" alt="" />
+                    </div>
+                  <p class="desc">The opening of the Dubai branch</p>
+                </div>
+          
+                <div class="event" id="event-2021" style="position: absolute; top:-103px;left:30rem" >
+                  <div class="iconarrow">
+                    <p class="desc">The opening of the Abu Dhabi branch</p>
+                    <img src="icones/about/toparrow.png" alt="" />
+                  </div>
+                  <div class="circle">
+                    <div class="insidecircle" 
+                    ><div class="subinsidecircle"></div></div>
+                  </div>
+                  <p class="year">2021</p>
+                </div>
+          
+                <div class="event" id="event-2024" style="position: absolute;top:-30px;left:40rem;display:flex;gap:1px;flex-direction:column;">
+                    <p class="year">2024</p>
+                    <div class="circle">
+                      <div class="insidecircle" 
+                      ><div class="subinsidecircle"></div></div>
+                    </div>
+                    <div class="iconarrow">
+                      <img src="icones/about/bottomarrow.png" alt="" />
+                    </div>
+                  <p class="desc">The opening of the Riyadh branch</p>
+                </div>
+              <!-- </div> -->
+              <div class="timeline">
+                  <div class="timeline-progress"></div>
+                </div>
+              </div>
+            </div>
+          </div>
           </div>
           <div class="sub-container5-img">
             <img
@@ -147,18 +222,10 @@
         </div>
         <!-- seventh container -->
         <div class="main-container7">
-          <div class="circle-percentage">
-            <div class="circle-inner">100%</div>
-          </div>
-          <div class="circle-percentage">
-            <div class="circle-inner">100%</div>
-          </div>
-          <div class="circle-percentage">
-            <div class="circle-inner">100%</div>
-          </div>
-          <div class="circle-percentage">
-            <div class="circle-inner">100%</div>
-          </div>
+         
+          <video autoplay loop muted  >
+            <source src="icones/about/videos/videohandred.mp4">
+          </video>
         </div>
         <!-- eighth container -->
         <div class="main-container8">
@@ -209,10 +276,8 @@
         </div>
       </div>
 
-      <div id="footer">
-
-      </div>
     </div>
+    <div id="footer"></div>
 
     <script>
       fetch("navbar.html")
@@ -233,6 +298,19 @@
         .catch((error) => {
           console.error("Error loading navbar:", error);
         });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const events = document.querySelectorAll(".event");
+    
+        events.forEach((event, index) => {
+            setTimeout(() => {
+                event.style.opacity = "1";
+                event.style.transform = "scale(1)";
+            }, index * 2000); // Delay each event by 2 seconds
+        });
+    });
+    
     </script>
   </body>
 </html>
